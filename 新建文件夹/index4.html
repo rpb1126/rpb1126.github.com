@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+        }
+        body{
+            background: url("imgs/xk.jpg");
+        }
+        li{
+            width: 800px;
+            height:500px;
+            float: left;
+            list-style: none;
+        }
+        ul{
+            width: 800px;
+            height: 500px;
+            margin: 50px auto;
+            position: relative;
+            overflow: hidden;
+        }
+    </style>
+    <script src="move.js"></script>
+    <script>
+        window.onload = function(){
+            var oUl = document.getElementById('ul1');
+            var aLi = oUl.children;
+            var aPos = [];
+            for(var i=0;i<aLi.length;i++){
+                aPos.push({left:aLi[i].offsetLeft})
+            }
+            for(var i =0;i<aPos.length;i++){
+                aLi[i].style.position ='absolute'
+                aLi[i].style.left = aPos[i].left+'px';
+            }
+            var w= 50;
+
+            for(i=1;i<aLi.length;i++){
+                aLi[i].style.left = oUl.offsetWidth - (aLi.length-i)*w+'px'
+            }
+            for(var i =0;i<aLi.length;i++){
+                aLi[i].index = i;
+                aLi[i].onmouseover = function(){
+                    for(var i=0;i<aLi.length;i++){
+                        if(i<=this.index){
+                            move(aLi[i],{left:w*i})
+                        }else{
+                            move(aLi[i],{left:oUl.offsetWidth-w*(aLi.length-i)});
+                        }
+                    }
+
+                }
+            }
+        }
+    </script>
+</head>
+<body>
+<ul id="ul1">
+    <li style="background: #cd0c0c"></li>
+    <li style="background: #000;"></li>
+    <li style="background: #2a21cc"></li>
+    <li style="background: #3dcc2a"></li>
+    <li style="background: #dd1006"></li>
+</ul>
+</body>
+</html>

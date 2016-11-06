@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        *{margin:0; padding:0;}
+        li{list-style:none;}
+        img{border:none;}
+        a{text-decoration:none;}
+        input,textarea{outline:none; resize:none; border:none;}
+        .clearfix:after{visibility:hidden;display:block;font-size:0;content:" ";clear:both;height:0;}
+        .clearfix{*zoom:1;}
+        body{
+            background: url("imgs/bg.jpg");
+        }
+        .head{
+            width: 100%;
+            height: 100px;
+            background:rgba(0,0,0,0.5);
+            z-index: 2;
+            position: fixed;
+            top:0;
+            left: 0;
+        }
+        .logo{
+            width: 160px;
+            height: 100%;
+            display: block;
+            float: left;
+            opacity: 0.5;
+        }
+        .logo img{
+            width: 100%;
+            height: 100%;
+        }
+        .head a{
+            display: block;
+            float: left;
+            width: 100px;
+            height: 50px;
+            cursor: pointer;
+            border-radius: 15px;
+            font-weight: bold;
+            color: #fff;
+            font-size: 20px;
+            font-family:微软雅黑;
+            text-align: center;
+            line-height: 50px;
+            margin: 20px 0 0 30px;
+        }
+        .loginBox{
+            width:278px; padding:30px 80px 20px 80px;float: left; margin: 300px 90px;
+            background-image: -webkit-linear-gradient(top,rgb(255,255,255),rgb(242,242,242));
+            box-shadow: 0 0 3px rgba(21,62,78,0.8); position:relative;
+            border-radius:2px;
+        }
+        .loginList{width:100%;}
+        .loginList li{margin-bottom:10px; overflow:hidden;}
+        .hTxt{font:18px/1.5 "Microsoft YaHei";}
+        .inputs{width:260px; display:block; font-weight:bold; background:url(imgs/inputBg.png) 0 0 no-repeat; height:14px; line-height:14px; padding:9px; color:#666;}
+        .loginList .btns{text-align:right; background:none; width:280px;}
+        .login{background:url(imgs/btns.png) 0 0 no-repeat; width:70px; height:42px; display:inline-block; overflow:hidden; opacity:.8;}
+        #allmap{ width:500px; height:500px; border:1px solid #000;margin:200px 100px; float: left}
+    </style>
+    <!--<script type="text/javascript" src="http://api.map.baidu.com/api?v=2.0&ak=您的密钥"></script>-->
+    <script type="text/javascript" src="http://api.map.baidu.com/api?v=1.3"></script>
+</head>
+<body>
+<!--头部-->
+<div class="head">
+    <span class="logo"><i><img src="imgs/3.jpg"> </i> </span>
+
+    <a href="index.html">首页</a>
+    <a href="index2.html">角色介绍</a>
+    <a href="javascript:;">家族介绍</a>
+    <a href="javascript:;">新闻动态</a>
+    <a href="index3.html">联系我们</a>
+</div>
+<!--地图-->
+<div id="allmap"></div>
+<!--登录框-->
+<div class="loginBox">
+    <ul class="loginList clearfix">
+        <li class="hTxt">用户登陆</li>
+        <li class="inputBox">
+            <input type="text" class="inputs" id="login_user">
+        </li>
+        <li class="inputBox">
+            <input type="password" class="inputs" id="login_pass">
+        </li>
+        <li class="btns">
+            <input id="login_btn" type="button" class="login" value="" />
+        </li>
+    </ul>
+</div>
+<script>
+    // 百度地图API功能
+    var map = new BMap.Map("allmap");
+    var point = new BMap.Point(116.404, 39.915);
+    map.centerAndZoom(point, 15);
+    map.enableScrollWheelZoom(true);     //开启鼠标滚轮缩放
+    // 百度地图API功能
+
+    var routePolicy = [BMAP_DRIVING_POLICY_LEAST_TIME,BMAP_DRIVING_POLICY_LEAST_DISTANCE,BMAP_DRIVING_POLICY_AVOID_HIGHWAYS];
+    map.clearOverlays();
+    search('兴盛国际','宏福大厦',BMAP_DRIVING_POLICY_AVOID_HIGHWAYS);
+    function search(start,end,route){
+        var driving = new BMap.DrivingRoute(map, {renderOptions:{map: map, autoViewport: true},policy: route});
+        driving.search(start,end);
+    }
+    ;(function(){
+        var oUser = document.getElementById('login_user');
+        var oPass = document.getElementById('login_pass');
+        var oBtn = document.getElementById('login_btn');
+
+        oBtn.onclick = function(){
+            if(oUser.value==''||oPass.value==''){
+                alert('用户名和密码不能为空。');
+                return;
+            }
+        };
+    })();
+</script>
+</body>
+</html>

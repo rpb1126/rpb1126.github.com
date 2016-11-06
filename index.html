@@ -1,88 +1,224 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
+<link>
+    <meta charset="utf-8">
     <title>Title</title>
-    <style>
-        *{margin:0; padding:0; list-style:none;}
-        ul{ overflow:hidden; width:630px; margin:100px auto;}
-        ul li{ float:left; position:relative; width:200px; height:200px; background:#ccc; margin:5px; overflow:hidden;}
-        ul li span{ position:absolute; width:100%; height:100%; background:rgba(255,0,0,0.3); left:-200px; top:0;}
+    <link href="css.css" rel="stylesheet">
+    <style type="text/css">
+    body,td,th {
+	font-size: 16px;
+}
+    body {
+	background-color: #f1f5f5f5;
+}
     </style>
-    <script src="move.js"></script>
-    <script>
-        function a2d(n){
-            return n*180/Math.PI;
-        }
-        function hoverDir(ev,obj){
-            var a=ev.clientX-obj.offsetLeft-obj.offsetWidth/2;
-            var b = obj.offsetTop+obj.offsetHeight/2-ev.clientY;
-            return Math.round((a2d(Math.atan2(b,a))+180)/90)%4;
-        }
-        function through(obj){
-            var oS = obj.children[0];
-            obj.onmouseenter = function(ev){
-                var oEvent = ev||event;
-                var dir = hoverDir(oEvent,obj);
-                switch(dir){
-                    case 0:
-                            //左
-                        oS.style.left = '-200px';
-                        oS.style.top = 0;
-                        break;
-                    case 1:
-                            //下
-                        oS.style.left=0;
-                        oS.style.top ='200px';
-                        break;
-                    case 2:
-                            //右
-                        oS.style.left = '200px';
-                        oS.style.top = 0;
-                        break;
-                    case 3:
-                            //上
-                        oS.style.left =0;
-                        oS.style.top ='-200px';
-                        break;
-                }
-                move(oS,{left:0,top:0});
-            };
-            obj.onmouseleave = function(ev){
-                var oEvent = ev||event;
-                var dir = hoverDir(oEvent,obj);
-                switch (dir){
-                    case 0:
-                        move(oS,{left:-200,top:0});
-                        break;
-                    case 1:
-                        move(oS,{left:0,top:200});
-                        break;
-                    case 2:
-                        move(oS,{left:200,top:0});
-                        break;
-                    case 3:
-                        move(oS,{left:0,top:-200});
-                        break;
-                }
-            };
-        }
-        window.onload = function(){
-            var aLi = document.getElementsByTagName('li');
-            for(var i = 0;i<aLi.length;i++){
-                through(aLi[i])
-            }
-        }
-    </script>
+    <script src="jquery.min.js"></script>
+    <script src="js.js"></script>
 </head>
 <body>
-<ul>
-    <li><span></span></li>
-    <li><span></span></li>
-    <li><span></span></li>
-    <li><span></span></li>
-    <li><span></span></li>
-    <li><span></span></li>
-</ul>
+<!--返回顶部-->
+<div class="top1">^</div>
+<!--头部-->
+<div class="head">
+    <span class="logo"><a href="javascript:;"><img src="imgs/3.jpg"> </a> </span>
+    <ul class="clearfix" id="list">
+        <li><a href="javascript:;">首页</a> </li>
+        <li><a href="index2.html">角色介绍</a> </li>
+        <li><a href="javascript:;">家族介绍</a> </li>
+        <li><a href="javascript:;">新闻动态</a> </li>
+        <li><a href="index3.html">联系我们</a> </li>
+    </ul>
+</div>
+<!--banner-->
+<div id="banner">
+    <p class="one"><strong>史诗巨作</strong></p>
+    <P class="two"><strong>《权力的游戏》（Game of Thrones），是美国HBO电视网制作推出的一部中世纪史诗奇幻题材的电视剧。该剧改编自美国作家乔治·R·R·马丁的奇幻小说《冰与火之歌》系列。由戴维·贝尼奥夫、D·B·威斯、Alan Taylor等人执导，大卫·贝尼奥夫和丹尼尔·威斯编剧，乔治·马丁担任剧本顾问，彼特·丁拉基、琳娜·海蒂、艾米莉亚·克拉克、基特·哈灵顿等人主演。
+        2015年9月，第67届艾美奖中《权力的游戏》破纪录斩获12项大奖，包揽了最佳剧情、导演、编剧、男配等大奖</strong></P>
+    <ul id="banner1">
+        <li><img src="imgs/9.jpg"></li>
+        <li><img src="imgs/1.jpg"> </li>
+        <li><img src="imgs/2.jpg"> </li>
+        <li><img src="imgs/9.jpg"></li>
+    </ul>
+</div>
+<!--角色介绍-->
+<div class="int">
+    <p class="bot1">角色介绍</p>
+    <p class="bot">角色介绍</p>
+</div>
+<div class="content clearfix">
+    <ul class="left clearfix">
+        <li class="clearfix">
+            <span class="one">
+            </span>
+            <p>
+                <strong>詹姆·兰尼斯特</strong><br/>
+                演员 尼可拉·科斯特-瓦尔道<br/>
+                凯岩城领主泰温·兰尼斯特和他的妻子乔安娜夫人的第二个孩子，同时也是他们的长子。詹姆年仅十五岁就加入了疯王伊里斯·坦格利安二世的御林铁卫，当他在篡夺者战争之中背叛伊里斯国王，并将其杀死在铁王座下的时候，世人送他“弑君者”的外号。詹姆一直都与他的双胞胎姐姐瑟曦·秘密维持着肉体关系</p>
+        </li>
+        <li class="clearfix">
+            <span class="two"></span>
+            <p>
+                <strong>丹尼莉丝·坦格利安</strong><br/>
+                演员 艾米莉亚·克拉克<br/>
+                坦格利安王朝的末代君王伊里斯·坦格利安二世的幼女，银发紫眼，美貌异于常人。丹妮莉丝出生时一场剧烈的风暴袭击了龙石岛，“风暴降生”因此得名。她的哥哥韦赛里斯·坦格利安，是“疯王”伊里斯·坦格利安的次子。为了让哥哥夺回铁王座，嫁给部落卓戈·卡奥。后期成长为强大且自信的女性。</p>
+        </li>
+        <li class="clearfix">
+            <span class="thr"></span>
+            <p>
+                <strong>艾德·史塔克</strong><br/>
+                演员 肖恩·宾<br/>
+                临冬城公爵暨北境守卫。艾德公爵娶奔流城徒利家族的长女凯特琳·徒利为妻，二人共育三子二女，分别为长子罗柏、长女珊莎、次女艾莉亚、次子布兰和幼子瑞肯。艾德另有一私生的儿子琼恩·雪诺，其母身份不明。铁群岛之首巴隆·葛雷乔伊大王仅存的幼子，席恩·葛雷乔伊被艾德公爵收为养子，与他的儿女同长大。
+            </p>
+        </li>
+        <li class="last"><a href="index2.html" class="more">more</a></li>
+    </ul>
+    <ul class="right clearfix">
+        <p><a href="javascript:;">其他人还看</a> </p>
+        <li><img src="imgs/2-1.jpg"><p>艾米莉亚·克拉克</p> </li>
+        <li><img src="imgs/2-2.jpg"><p>肖恩·宾</p> </li>
+        <li><img src="imgs/2-3.jpg"><p>麦茜·威廉姆斯</p> </li>
+        <li><img src="imgs/2-4.jpg"><p>冰与火之歌</p> </li>
+        <li><img src="imgs/2-5.jpg"><p>彼特·丁拉基</p> </li>
+        <li><img src="imgs/2-8.jpg"><P>琼恩·雪诺</P> </li>
+        <li><img src="imgs/2-7.jpg"><p>丹妮莉丝·坦格利安</p> </li>
+        <li><img src="imgs/2-9.jpg"><p>基特·哈灵顿</p> </li>
+    </ul>
+</div>
+<!--家族-->
+<div class="int">
+    <p class="bot1">七国之争 九大家族</p>
+    <p class="bot">七国之争 九大家族</p>
+</div>
+<div class="mid"></div>
+<div class="content1 clearfix">
+    <ul class="fl">
+        <li class="box clearfix">
+            <div class="mid-1">
+                <h2>史塔克家族</h2>
+                <p>家徽：皑皑大地上的灰色冰原奔狼。　　</p>
+                <p>族语：凛冬将至（Winter Is Coming）　</p>
+                <p>属地：临冬城 Winterfell　</p>
+                <p>从属：北境</p>
+           </div>
+           <div class="mid-r"><p><span class="botm"></span><span class="top">Winter Is Coming</span></p></div>
+        </li>
+        <li class="box clearfix">
+            <div class="mid-1">
+                <h2>艾琳家族</h2>
+                <p>家徽：天蓝为低的一弯白色新月和猎鹰　　</p>
+                <p>族语：高如荣誉（High as honor）　</p>
+                <p>属地：鹰巢城 　</p>
+                <p>从属：南境</p>
+            </div>
+            <div class="mid-r1"><p><span class="botm"></span><span class="top">High as honor</span></p></div>
+        </li>
+        <li class="box clearfix">
+            <div class="mid-1">
+                <h2>徒利家族</h2>
+                <p>家徽：越出水面银鳟,底色为红蓝波纹　　</p>
+                <p>族语：家族．责任．荣誉（Family, Duty, Honor）　</p>
+                <p>属地：奔流城 Riverrun 　</p>
+                <p>从属：河间地</p>
+            </div>
+            <div class="mid-r2"><p><span class="botm"></span><span class="top">Family, Duty, Honor</span></p></div>
+        </li>
+    </ul>
+    <div class="con-r fr">
+        <p>美剧人气榜</p>
+        <div >
+            <div class="tit clearfix">
+                <a class="mon fl" href="javascript:;">今日美剧</a>
+            </div>
+            <div class="box-3">
+                <ul class="day-cont fl" style="display: block">
+                    <li class="clearfix"><span class="fl active">1</span><img class="fl" src="imgs/6-1.jpg"><p class="west fl">西部世界</p> </li>
+                    <li class="clearfix"><span class="fl active">2</span><img class="fl" src="imgs/6-2.jpg"><p class="west fl">权力的游戏</p> </li>
+                    <li class="clearfix"><span class="fl active">3</span><img class="fl" src="imgs/6-3.jpg"><p class="west fl">行尸走肉第七季</p> </li>
+                    <li class="clearfix"><span class="fl">4</span><img class="fl" src="imgs/6-4.jpg"><p class="west fl">行尸走肉</p> </li>
+                    <li class="clearfix"><span class="fl">5</span><img class="fl" src="imgs/6-5.jpg"><p class="west fl">绝命毒师</p> </li>
+                    <li class="clearfix"><span class="fl">6</span><img class="fl" src="imgs/6-6.jpg"><p class="west fl">吸血鬼日记第八季</p> </li>
+                    <li class="clearfix"><span class="fl">7</span><img class="fl" src="imgs/6-7.jpg"><p class="west fl">纸牌屋</p> </li>
+                </ul>
+                <ul class="day-cont fl" style="display: block">
+                    <li class="clearfix"><span class="fl active">8</span><img class="fl" src="imgs/6-8.jpg"><p class="west fl">西部世界</p> </li>
+                    <li class="clearfix"><span class="fl active">9</span><img class="fl" src="imgs/6-9.jpg"><p class="west fl">权力的游戏</p> </li>
+                    <li class="clearfix"><span class="fl active">10</span><img class="fl" src="imgs/6-10.jpg"><p class="west fl">行尸走肉第七季</p> </li>
+                    <li class="clearfix"><span class="fl">11</span><img class="fl" src="imgs/6-11.jpg"><p class="west fl">行尸走肉</p> </li>
+                    <li class="clearfix"><span class="fl">12</span><img class="fl" src="imgs/6-12.jpg"><p class="west fl">绝命毒师</p> </li>
+                    <li class="clearfix"><span class="fl">13</span><img class="fl" src="imgs/6-13.jpg"><p class="west fl">吸血鬼日记第八季</p> </li>
+                    <li class="clearfix"><span class="fl">14</span><img class="fl" src="imgs/6-14.jpg"><p class="west fl">纸牌屋</p> </li>
+                </ul>
+                <ul class="day-cont fl" style="display: block">
+                    <li class="clearfix"><span class="fl active">15</span><img class="fl" src="imgs/6-15.jpg"><p class="west fl">西部世界</p> </li>
+                    <li class="clearfix"><span class="fl active">16</span><img class="fl" src="imgs/6-16.jpg"><p class="west fl">权力的游戏</p> </li>
+                    <li class="clearfix"><span class="fl active">17</span><img class="fl" src="imgs/6-17.jpg"><p class="west fl">行尸走肉第七季</p> </li>
+                    <li class="clearfix"><span class="fl">18</span><img class="fl" src="imgs/6-18.jpg"><p class="west fl">行尸走肉</p> </li>
+                    <li class="clearfix"><span class="fl">19</span><img class="fl" src="imgs/6-19.jpg"><p class="west fl">绝命毒师</p> </li>
+                    <li class="clearfix"><span class="fl">20</span><img class="fl" src="imgs/6-20.jpg"><p class="west fl">吸血鬼日记第八季</p> </li>
+                </ul>
+                <ul class="day-cont fl" style="display: block">
+                    <li class="clearfix"><span class="fl active">1</span><img class="fl" src="imgs/6-1.jpg"><p class="west fl">西部世界</p> </li>
+                    <li class="clearfix"><span class="fl active">2</span><img class="fl" src="imgs/6-2.jpg"><p class="west fl">权力的游戏</p> </li>
+                    <li class="clearfix"><span class="fl active">3</span><img class="fl" src="imgs/6-3.jpg"><p class="west fl">行尸走肉第七季</p> </li>
+                    <li class="clearfix"><span class="fl">4</span><img class="fl" src="imgs/6-4.jpg"><p class="west fl">行尸走肉</p> </li>
+                    <li class="clearfix"><span class="fl">5</span><img class="fl" src="imgs/6-5.jpg"><p class="west fl">绝命毒师</p> </li>
+                    <li class="clearfix"><span class="fl">6</span><img class="fl" src="imgs/6-6.jpg"><p class="west fl">吸血鬼日记第八季</p> </li>
+                    <li class="clearfix"><span class="fl">7</span><img class="fl" src="imgs/6-7.jpg"><p class="west fl">纸牌屋</p> </li>
+                </ul>
+            </div>
+            <span class="left1"><</span>
+            <span class="right1">></span>
+            <ul class="btn clearfix">
+                <li class="active1"></li>
+                <li></li>
+                <li></li>
+            </ul>
+        </div>
+    </div>
+    <div class="right-bt fr">
+        <p class="user">用户还搜了</p>
+        <ul class="day-cont fl" style="display: block">
+            <li class="clearfix"><img class="fl" src="imgs/6-15.jpg"><p class="west fl">西部世界</p> </li>
+            <li class="clearfix"><img class="fl" src="imgs/6-16.jpg"><p class="west fl">权力的游戏</p> </li>
+            <li class="clearfix">><img class="fl" src="imgs/6-17.jpg"><p class="west fl">行尸走肉第七季</p> </li>
+            <li class="clearfix"><img class="fl" src="imgs/6-18.jpg"><p class="west fl">行尸走肉</p> </li>
+        </ul>
+    </div>
+</div>
+<!--底部-->
+<div class="last clearfix">
+    <div class="clearfix">
+        <ul class="last-1 fl">
+            <li><a class="last-2" href="#">4000-800-577</a></li>
+            <li><a href="#">客服热线</a></li>
+            <li><a href="#">周一至周日：08：00-22：00</a></li>
+        </ul>
+        <ul class="last-3 fl">
+            <li><a class="last-2" href="#">用户帮助</a></li>
+            <li><a href="javascript:;">新手指南</a></li>
+            <li><a href="javascript:;">网站地图</a></li>
+            <li><a href="javascript:;">意见反馈</a></li>
+        </ul>
+        <ul class="last-3 fl">
+            <li><a class="last-2" href="javascript:;">关注我们</a></li>
+            <li><a  href="javascript:;">新浪微博</a></li>
+            <li><a  href="javascript:;">QQ空间</a></li>
+            <li><a  href="javascript:;">腾讯微博</a></li>
+        </ul>
+        <ul class="last-3 fl">
+            <li><a class="last-2" href="javascript:;">微信服务号</a></li>
+            <li><a class="last-7" href="javascript:;"><img src="imgs/8.png" alt=""/></a></li>
+        </ul>
+        <ul class="last-4 fl">
+            <li><a class="last-2" href="#">客户端下载</a></li>
+            <li><a class="last-7" href="#"><img src="imgs/tab.png" alt=""/></a></li>
+        </ul>
+    </div>
+</div>
+</div>
+<div class="share">
+    <ul></ul>
+</div>
 </body>
 </html>
