@@ -4,9 +4,50 @@
     <meta charset="UTF-8">
     <title>Title</title>
     <style>
-        *{
-            padding: 0;
-            margin: 0;
+        *{margin:0; padding:0;}
+        li{list-style:none;}
+        img{border:none;}
+        a{text-decoration:none;}
+        input,textarea{outline:none; resize:none; border:none;}
+        .clearfix:after{visibility:hidden;display:block;font-size:0;content:" ";clear:both;height:0;}
+        .clearfix{*zoom:1;}
+        body{
+            background: url("../imgs/bg.jpg");
+        }
+        .head{
+            width: 100%;
+            height: 100px;
+            background:rgba(0,0,0,0.5);
+            z-index: 2;
+            position: fixed;
+            top:0;
+            left: 0;
+        }
+        .logo{
+            width: 160px;
+            height: 100%;
+            display: block;
+            float: left;
+            opacity: 0.5;
+        }
+        .logo img{
+            width: 100%;
+            height: 100%;
+        }
+        .head a{
+            display: block;
+            float: left;
+            width: 100px;
+            height: 50px;
+            cursor: pointer;
+            border-radius: 15px;
+            font-weight: bold;
+            color: #fff;
+            font-size: 20px;
+            font-family:微软雅黑;
+            text-align: center;
+            line-height: 50px;
+            margin: 20px 0 0 30px;
         }
         body{
             background: url("../imgs/xk.jpg");
@@ -17,10 +58,14 @@
             float: left;
             list-style: none;
         }
+        img{
+            width: 100%;
+            height: 100%;
+        }
         ul{
             width: 800px;
             height: 500px;
-            margin: 50px auto;
+            margin: 150px auto;
             position: relative;
             overflow: hidden;
         }
@@ -60,12 +105,22 @@
     </script>
 </head>
 <body>
+<div class="head">
+    <span class="logo"><i><img src="../imgs/3.jpg"> </i> </span>
+
+    <a href="../index.html">首页</a>
+    <a href="index2.html">角色介绍</a>
+    <a href="index4.html">家族介绍</a>
+    <a href="javascript:;">新闻动态</a>
+    <a href="index3.html">联系我们</a>
+</div>
 <ul id="ul1">
-    <li style="background: #cd0c0c"></li>
-    <li style="background: #000;"></li>
-    <li style="background: #2a21cc"></li>
-    <li style="background: #3dcc2a"></li>
-    <li style="background: #dd1006"></li>
+    <li><img src="../imgs/w-1.jpg"></li>
+    <li><img src="../imgs/w-2.jpg"></li>
+    <li><img src="../imgs/w-3.jpg"></li>
+    <li><img src="../imgs/w-4.jpg"></li>
+    <li><img src="../imgs/w-5.jpg"></li>
 </ul>
+
 </body>
 </html>

@@ -72,7 +72,6 @@
             text-align:center;
             line-height:300px;
             font-size:50px;
-            background:#399;
             border:1px solid #000;
             opacity:0;
         }
@@ -117,13 +116,13 @@
         .prev_btn{
             position: absolute;
             left: 0;
-            background: url("../imgs/prve.jpg");
+            background: url("../imgs/prve.png") no-repeat;
             background-size: 100%;
         }
         .next_btn{
             position: absolute;
             right: 0;
-            background: url("../imgs/next.jpg");
+            background: url("../imgs/next.png") no-repeat;
             background-size: 100%;
         }
     </style>
@@ -132,7 +131,7 @@
             var oPrev = document.querySelector('.prev_btn');
             var oNext = document.querySelector('.next_btn');
             var aLi = document.querySelectorAll('ul li');
-
+            var oCur = document.querySelector('.cur');
             var aClass = [];
             for(var i=0;i<aLi.length;i++){
                 aClass[i] = aLi[i].className;
@@ -167,6 +166,7 @@
                 oCur.addEventListener('transitionend',tranEnd,false);
 
             }
+
         };
     </script>
 </head>
@@ -174,13 +174,11 @@
 <!--头部-->
 <div class="head">
     <span class="logo"><i><img src="../imgs/3.jpg"> </i> </span>
-
-       <a href="index.html">首页</a>
+       <a href="../index.html">首页</a>
         <a href="index2.html">角色介绍</a>
        <a href="index4.html">家族介绍</a>
         <a href="javascript:;">新闻动态</a>
        <a href="index3.html">联系我们</a>
-
 </div>
 <em class="prev_btn " ></em>
 <em class="next_btn"></em>

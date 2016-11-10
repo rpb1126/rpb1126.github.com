@@ -251,6 +251,11 @@ body{
 }
 .content .right p{
     margin: 5px 0 0 5px;
+    text-align: center;
+}
+.content .right p a{
+    color: #00a1cb;
+    font-size: 20px;
 }
 .content .right li{
     float: left;

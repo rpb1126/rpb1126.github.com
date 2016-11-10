@@ -1,4 +1,5 @@
 $(function(){
+    $()
     $('#list li').hover(function(){
         $(this).css('background','#ccc')
     },function(){
@@ -67,13 +68,13 @@ $(function(){
         iNow = $(this).index();
         tab(iNow);
     });
-    $('.left1').click(function(){
+    $('.right1').click(function(){
         if(bOk)return;
         bOk=true;
         iNow++;
         tab(iNow);
     });
-    $('.right1').click(function(){
+    $('.left1').click(function(){
         if(bOk)return;
         bOk=true;
         iNow--;
