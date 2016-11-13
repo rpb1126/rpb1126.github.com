@@ -326,6 +326,7 @@
       background: rgba(0, 0, 0, 0.4); }
 
 .con-r {
+  float: right;
   width: 270px;
   height: 500px;
   border: 1px dashed #ccc;
@@ -419,6 +420,7 @@
   bottom: 10px; }
 
 .right-bt {
+  float: right;
   width: 270px;
   height: 300px;
   border: 1px dashed #ccc;
@@ -483,5 +485,6 @@
   position: fixed;
   top:60%;
   right: 30px;
+  z-index: 999;
 }
 /*# sourceMappingURL=css.css.map */

@@ -1,5 +1,4 @@
 $(function(){
-    $()
     $('#list li').hover(function(){
         $(this).css('background','#ccc')
     },function(){
@@ -15,7 +14,7 @@ $(function(){
     var n = 0;
     timer = setInterval(function(){
         n++;
-        $('#banner1').animate({'left':n*-1349},function(){
+        $('#banner1').animate({'left':n*-$('#banner1 li').width()},function(){
             if(n==3){
                 $('#banner1').css('left',0);
                 n=0;
@@ -24,6 +23,7 @@ $(function(){
     },3000);
     $('#banner1').mouseenter(function(){
         clearInterval(timer)
+
     })
     $('#banner1').mouseleave(function(){
         timer = setInterval(function(){
