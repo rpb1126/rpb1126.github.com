@@ -15,7 +15,7 @@ $(function(){
     var n = 0;
     timer = setInterval(function(){
         n++;
-        $('#banner1').animate({'left':n*-1349},function(){
+        $('#banner1').animate({'left':n*-$('#banner1 li').width()},function(){
             if(n==3){
                 $('#banner1').css('left',0);
                 n=0;
