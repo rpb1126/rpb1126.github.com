@@ -261,6 +261,7 @@
       margin:20px 0 0 40px;
     }
   }
+
   .mid-r{
     width:600px;
     height:250px;
@@ -294,6 +295,19 @@
         background:rgba(0,0,0,0.4);
       }
     }
+  }
+}
+.content1{
+  position: relative;
+  .con-r{
+    position: absolute;
+    right: 0;
+    top: 0;
+  }
+  .right-bt{
+    position: absolute;
+    right: 0;
+    top:550px;
   }
 }
 .mid-r1{
